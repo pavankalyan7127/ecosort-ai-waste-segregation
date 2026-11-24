@@ -1,0 +1,18 @@
+# Core Backend & REST Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.7.0
+python-multipart>=0.0.9
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Vision & Numerical Processing
+numpy>=1.26.0
+pillow>=10.0.0
+opencv-python-headless>=4.10.0
+ultralytics>=8.3.0
+
+# Edge AI Acceleration Notes:
+# PyTorch is installed automatically as an ultralytics backend runtime (standard PyPI wheel on Windows / Linux).
+# ExecuTorch for Raspberry Pi 5 + AI HAT+ 2 (Hailo-8) should be compiled/installed separately
+# using target SoC toolchains (see docs/architecture/overview.md).

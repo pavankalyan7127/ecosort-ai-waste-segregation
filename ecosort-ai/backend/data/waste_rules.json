@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "id": "wet_organic",
+      "bin_color": "Green",
+      "name": {
+        "en": "Wet / Organic Waste",
+        "ta": "ஈர / மக்கும் கழிவு"
+      },
+      "description": {
+        "en": "Kitchen waste, leftover food, fruit peels, vegetable scraps, and garden waste.",
+        "ta": "சமையலறை கழிவுகள், மீதமுள்ள உணவு, பழத்தோல்கள், காய்கறி கழிவுகள் மற்றும் தோட்டக் கழிவுகள்."
+      },
+      "disposal_instructions": {
+        "en": "Place directly into the Green Bin. Avoid mixing with plastic bags or wrappers.",
+        "ta": "பச்சை நிற தொட்டியில் போடவும். பிளாஸ்டிக் பைகளுடன் கலக்க வேண்டாம்."
+      },
+      "examples": [
+        "banana_peel",
+        "apple_core",
+        "tea_leaves",
+        "vegetable_scraps",
+        "leftover_food"
+      ]
+    },
+    {
+      "id": "dry_recyclable",
+      "bin_color": "Blue",
+      "name": {
+        "en": "Dry / Recyclable Waste",
+        "ta": "உலர் / மறுசுழற்சி கழிவு"
+      },
+      "description": {
+        "en": "Clean and dry paper, cardboard, plastic bottles, metal cans, and glass containers.",
+        "ta": "சுத்தமான மற்றும் உலர் காகிதம், அட்டைப்பெட்டி, பிளாஸ்டிக் பாட்டில்கள், உலோக கேன்கள் மற்றும் கண்ணாடி பொருட்கள்."
+      },
+      "disposal_instructions": {
+        "en": "Rinse clean, crush plastic bottles/cans to save space, and place in the Blue Bin.",
+        "ta": "சுத்தம் செய்து, பிளாஸ்டிக் பாட்டில்களை நசுக்கி நீல நிற தொட்டியில் போடவும்."
+      },
+      "examples": [
+        "plastic_bottle",
+        "soda_can",
+        "cardboard_box",
+        "newspaper",
+        "glass_bottle"
+      ]
+    },
+    {
+      "id": "hazardous_sanitary",
+      "bin_color": "Red",
+      "name": {
+        "en": "Domestic Hazardous / Sanitary",
+        "ta": "ஆபத்தான / சுகாதார கழிவு"
+      },
+      "description": {
+        "en": "Sanitary napkins, diapers, bandages, expired medicines, batteries, and paint cans.",
+        "ta": "சுகாதார நாப்கின்கள், டயப்பர்கள், மருந்துகள், பேட்டரிகள் மற்றும் ரசாயன பொருட்கள்."
+      },
+      "disposal_instructions": {
+        "en": "Wrap securely in paper and deposit into the designated Red Bin for specialized handling.",
+        "ta": "காகிதத்தில் கவனமாக சுற்றி சிவப்பு நிற தொட்டியில் போடவும்."
+      },
+      "examples": [
+        "battery",
+        "medicine_strip",
+        "chemical_container",
+        "used_mask",
+        "syringe"
+      ]
+    },
+    {
+      "id": "e_waste",
+      "bin_color": "Grey / Black",
+      "name": {
+        "en": "Electronic Waste (E-Waste)",
+        "ta": "மின்னணு கழிவு (இ-கழிவு)"
+      },
+      "description": {
+        "en": "Discarded electronics, circuit boards, chargers, cables, and broken electronic peripherals.",
+        "ta": "பயன்படுத்த முடியாத மின்னணு சாதனங்கள், சார்ஜர்கள், கேபிள்கள் மற்றும் சர்க்யூட் போர்டுகள்."
+      },
+      "disposal_instructions": {
+        "en": "Do not mix with normal trash. Hand over to certified e-waste recyclers or designated e-waste drop kiosks.",
+        "ta": "சாதாரண குப்பைகளுடன் கலக்க வேண்டாம். அங்கீகரிக்கப்பட்ட மின்னணு கழிவு பிரிவில் ஒப்படைக்கவும்."
+      },
+      "examples": [
+        "charging_cable",
+        "cell_phone",
+        "earphones",
+        "pcb_board"
+      ]
+    }
+  ]
+}

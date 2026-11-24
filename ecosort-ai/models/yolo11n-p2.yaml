@@ -1,0 +1,56 @@
+# EcoSort AI — YOLO11n-P2 (Stride 4 Detection Head)
+# Architecture: 4-scale detection [P2, P3, P4, P5] for fine-grained waste segregation
+# Target Input: 640 x 640 pixels
+# Classes: 13 Candidate Dry Waste Classes
+
+nc: 13 # number of classes
+
+scales:
+  # [depth, width, max_channels]
+  n: [0.50, 0.25, 1024]
+
+# YOLO11n backbone
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]] # 0-P1/2 (320x320)
+  - [-1, 1, Conv, [128, 3, 2]] # 1-P2/4 (160x160)
+  - [-1, 2, C3k2, [256, False, 0.25]] # 2 (P2 feature map, 160x160, 64 channels)
+  - [-1, 1, Conv, [256, 3, 2]] # 3-P3/8 (80x80)
+  - [-1, 2, C3k2, [512, False, 0.25]] # 4 (P3 feature map, 80x80, 128 channels)
+  - [-1, 1, Conv, [512, 3, 2]] # 5-P4/16 (40x40)
+  - [-1, 2, C3k2, [512, True]] # 6 (P4 feature map, 40x40, 128 channels)
+  - [-1, 1, Conv, [1024, 3, 2]] # 7-P5/32 (20x20)
+  - [-1, 2, C3k2, [1024, True]] # 8 (P5 feature map, 20x20, 256 channels)
+  - [-1, 1, SPPF, [1024, 5]] # 9 (20x20)
+  - [-1, 2, C2PSA, [1024]] # 10 (20x20, 256 channels with PSA attention)
+
+# YOLO11n-P2 neck & head
+head:
+  # Top-down pathway
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 11 (40x40)
+  - [[-1, 6], 1, Concat, [1]] # 12: cat backbone P4 (layer 6)
+  - [-1, 2, C3k2, [512, False]] # 13 (40x40)
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 14 (80x80)
+  - [[-1, 4], 1, Concat, [1]] # 15: cat backbone P3 (layer 4)
+  - [-1, 2, C3k2, [256, False]] # 16 (80x80)
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 17 (160x160, stride 4 scale)
+  - [[-1, 2], 1, Concat, [1]] # 18: cat backbone P2 (layer 2)
+  - [-1, 2, C3k2, [128, False]] # 19 (P2/4-xsmall head output, 160x160, 32 channels)
+
+  # Bottom-up pathway
+  - [-1, 1, Conv, [128, 3, 2]] # 20 (downsample to 80x80)
+  - [[-1, 16], 1, Concat, [1]] # 21: cat intermediate P3 (layer 16)
+  - [-1, 2, C3k2, [256, False]] # 22 (P3/8-small head output, 80x80, 64 channels)
+
+  - [-1, 1, Conv, [256, 3, 2]] # 23 (downsample to 40x40)
+  - [[-1, 13], 1, Concat, [1]] # 24: cat intermediate P4 (layer 13)
+  - [-1, 2, C3k2, [512, False]] # 25 (P4/16-medium head output, 40x40, 128 channels)
+
+  - [-1, 1, Conv, [512, 3, 2]] # 26 (downsample to 20x20)
+  - [[-1, 10], 1, Concat, [1]] # 27: cat backbone P5 (layer 10)
+  - [-1, 2, C3k2, [1024, True]] # 28 (P5/32-large head output, 20x20, 256 channels)
+
+  # 4-scale detection head: P2 (stride 4), P3 (stride 8), P4 (stride 16), P5 (stride 32)
+  - [[19, 22, 25, 28], 1, Detect, [nc]] # 29

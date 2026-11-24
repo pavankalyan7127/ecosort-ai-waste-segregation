@@ -1,0 +1,62 @@
+{
+  "task": "Task 5.4.6 — YOLO11n-P2 Final Metric Consistency Audit",
+  "audit_timestamp": "2026-11-07T10:45:00",
+  "checkpoint_identity": {
+    "checkpoint_path": "D:\\EcoSort-Resources\\experiments\\yolo11n_p2_baseline_13class\\weights\\best.pt",
+    "sha256": "345198e4056e2d7ac99e41e6eca788a7de19d0c9563d25eaa4eaee46fce5f917",
+    "file_size_bytes": 5831684,
+    "stored_epoch": -1,
+    "stored_fitness": null,
+    "learnable_parameters": 2668404,
+    "state_dict_elements": 2684404,
+    "persistent_buffer_elements": 16000,
+    "persistent_buffers_count": 288,
+    "identity_confirmed_across_tasks": true
+  },
+  "operating_point_audit": {
+    "selected_curve_bin": 3,
+    "selected_confidence_threshold": 0.003003003003003003,
+    "exact_iou_matching_thresholds": [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95],
+    "primary_iou_threshold": 0.5,
+    "total_predictions_passed_to_metrics": 4569,
+    "total_predictions_surviving_operating_point": 3753,
+    "true_positives": 15.0,
+    "false_positives": 3738.0,
+    "false_negatives": 58.0,
+    "macro_precision": 0.004794234748042483,
+    "macro_recall": 0.2572649572649573,
+    "macro_f1": 0.009271,
+    "root_cause_of_01538_claim": "Script implementation error in Task 5.4.4. argmax over 1D box.f1 (shape 13) found class 2 (plastic_bottle_cap). Dividing class index 2 by 13 classes yielded 2/13 = 0.1538, which was mistakenly reported as a confidence threshold. Actual Ultralytics operating point is at bin 3 (tau = 0.003003)."
+  },
+  "loss_gain_audit": {
+    "cls_hyp_multiplier": 1.5,
+    "loss_function": "BCEWithLogitsLoss",
+    "gradient_scaling": "Multiplies both positive foreground and negative background classification gradients equally by 3.0.",
+    "selectively_boosts_positives": false,
+    "nature_of_spatial_ratio": "Spatial candidate location ratio (34,000 grid locations vs 2.8 targets/image), not conventional class-frequency imbalance."
+  },
+  "batch_size_and_accumulation_audit": {
+    "accumulation_mechanism": "BaseTrainer: accumulate = max(round(nbs / batch_size), 1)",
+    "is_accumulate_arg_supported": false,
+    "default_nbs": 64,
+    "batch_4_default_nbs_effective_batch": 64,
+    "required_nbs_for_effective_batch_8": 8,
+    "recommended_experiment_nbs": 16,
+    "recommended_experiment_effective_batch": 16
+  },
+  "per_class_operating_point": [
+    {"class_id": 0, "name": "clear_plastic_bottle", "gt": 5, "tp": 2.0, "fp": 939.0, "precision": 0.00213, "recall": 0.40000, "f1": 0.00423},
+    {"class_id": 1, "name": "glass_bottle", "gt": 9, "tp": 1.0, "fp": 347.0, "precision": 0.00287, "recall": 0.11111, "f1": 0.00560},
+    {"class_id": 2, "name": "plastic_bottle_cap", "gt": 2, "tp": 1.0, "fp": 34.0, "precision": 0.02857, "recall": 0.50000, "f1": 0.05405},
+    {"class_id": 3, "name": "metal_bottle_cap", "gt": 6, "tp": 0.0, "fp": 0.0, "precision": 0.00000, "recall": 0.00000, "f1": 0.00000},
+    {"class_id": 4, "name": "drink_can", "gt": 2, "tp": 1.0, "fp": 474.0, "precision": 0.00211, "recall": 0.50000, "f1": 0.00419},
+    {"class_id": 5, "name": "other_carton", "gt": 2, "tp": 0.0, "fp": 0.0, "precision": 0.00000, "recall": 0.00000, "f1": 0.00000},
+    {"class_id": 6, "name": "corrugated_carton", "gt": 6, "tp": 1.0, "fp": 199.0, "precision": 0.00500, "recall": 0.16667, "f1": 0.00971},
+    {"class_id": 7, "name": "disposable_plastic_cup", "gt": 1, "tp": 1.0, "fp": 75.0, "precision": 0.01316, "recall": 1.00000, "f1": 0.02597},
+    {"class_id": 8, "name": "other_plastic", "gt": 3, "tp": 0.0, "fp": 0.0, "precision": 0.00000, "recall": 0.00000, "f1": 0.00000},
+    {"class_id": 9, "name": "plastic_film", "gt": 15, "tp": 7.0, "fp": 1381.0, "precision": 0.00504, "recall": 0.46667, "f1": 0.00998},
+    {"class_id": 10, "name": "other_plastic_wrapper", "gt": 5, "tp": 1.0, "fp": 289.0, "precision": 0.00345, "recall": 0.20000, "f1": 0.00678},
+    {"class_id": 11, "name": "styrofoam_piece", "gt": 2, "tp": 0.0, "fp": 0.0, "precision": 0.00000, "recall": 0.00000, "f1": 0.00000},
+    {"class_id": 12, "name": "cigarette", "gt": 15, "tp": 0.0, "fp": 0.0, "precision": 0.00000, "recall": 0.00000, "f1": 0.00000}
+  ]
+}

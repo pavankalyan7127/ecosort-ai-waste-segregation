@@ -1,0 +1,249 @@
+[
+  {
+    "status": "success",
+    "message": "Detection completed. Found 1 object(s), 1 mapped to statutory waste streams.",
+    "target_hardware": "Raspberry Pi 5 + AI HAT+ 2 (Hailo-8 / Hailo-8L NPU)",
+    "target_model": "yolo11n.pt",
+    "pipeline_status": "inference_active",
+    "is_integrated": true,
+    "model_type": "coco_demonstration",
+    "image_dimensions": {
+      "width": 2592,
+      "height": 1552,
+      "channels": 3
+    },
+    "inference_latency_ms": 3408.48,
+    "total_detected": 1,
+    "total_waste_mapped": 1,
+    "stream_counts": {
+      "Dry waste": 1
+    },
+    "detected_items": [
+      {
+        "class_id": "dry_plastic_pet_bottles",
+        "detected_label": "bottle",
+        "item_name": "PET Beverage and Water Bottles (Resin Code 1)",
+        "primary_stream": "Dry waste",
+        "bin_color": "Blue",
+        "confidence": 0.8396,
+        "bounding_box": {
+          "x_min": 0.1904,
+          "y_min": 0.0135,
+          "x_max": 0.7589,
+          "y_max": 0.9449
+        },
+        "is_waste_mapped": true,
+        "disposal_guidance": "Sorted and shredded into PET flakes at Material Recovery Facilities (MRFs) and sent to registered recyclers to produce recycled polyester fiber or food-grade rPET.",
+        "segregation_instructions": "Place in the Blue Dry Waste Bin per Rule 39(51). Must never be littered, burned, or dumped into drains (Rule 5(1)(f)).",
+        "source_references": [
+          {
+            "document_title": "Solid Waste Management Rules, 2026 (Notification S.O. 388(E))",
+            "issuing_organisation": "Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India",
+            "official_url": "https://egazette.gov.in / https://moef.gov.in",
+            "publication_or_notification_date": "2026-01-27",
+            "rule_or_section": "Rule 3(s), Rule 3(zj), Rule 3(zw), Rule 39(51)",
+            "page_number": "81, 82, 108"
+          },
+          {
+            "document_title": "Plastic Waste Management Rules, 2016 (as amended through 2024)",
+            "issuing_organisation": "Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India",
+            "official_url": "https://cpcb.nic.in/plastic-waste-management-rules/",
+            "publication_or_notification_date": "2016-03-18",
+            "rule_or_section": "Schedule II, Category I (Rigid Plastic Packaging)",
+            "page_number": "EPR Guidelines"
+          }
+        ],
+        "verification_status": "verified",
+        "mapping_notes": "Demonstration mapping: COCO 'bottle' mapped to statutory Dry waste (PET bottle)."
+      }
+    ],
+    "file_name": "sample1_plastic_bottle.jpg",
+    "file_size_bytes": 717088,
+    "total_wall_time_ms": 6153.83
+  },
+  {
+    "status": "success",
+    "message": "Detection completed. Found 1 object(s), 1 mapped to statutory waste streams.",
+    "target_hardware": "Raspberry Pi 5 + AI HAT+ 2 (Hailo-8 / Hailo-8L NPU)",
+    "target_model": "yolo11n.pt",
+    "pipeline_status": "inference_active",
+    "is_integrated": true,
+    "model_type": "coco_demonstration",
+    "image_dimensions": {
+      "width": 3030,
+      "height": 2670,
+      "channels": 3
+    },
+    "inference_latency_ms": 150.14,
+    "total_detected": 1,
+    "total_waste_mapped": 1,
+    "stream_counts": {
+      "Wet waste": 1
+    },
+    "detected_items": [
+      {
+        "class_id": "wet_fruit_vegetable_peels",
+        "detected_label": "banana",
+        "item_name": "Vegetable Scraps and Fruit Peels",
+        "primary_stream": "Wet waste",
+        "bin_color": "Green",
+        "confidence": 0.8589,
+        "bounding_box": {
+          "x_min": 0.0254,
+          "y_min": 0.0264,
+          "x_max": 0.96,
+          "y_max": 0.957
+        },
+        "is_waste_mapped": true,
+        "disposal_guidance": "Ideal feedstock for decentralized on-site composting, bio-gas generation, or collection for municipal Micro Composting Centres (Rule 39(19), Rule 39(23)).",
+        "segregation_instructions": "Deposit directly into the green wet-waste container. Must not be placed inside single-use plastic carry bags per Rule 5(1)(b) and Tamil Nadu G.O. (Ms.) No. 84.",
+        "source_references": [
+          {
+            "document_title": "Solid Waste Management Rules, 2026 (Notification S.O. 388(E))",
+            "issuing_organisation": "Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India",
+            "official_url": "https://egazette.gov.in / https://moef.gov.in",
+            "publication_or_notification_date": "2026-01-27",
+            "rule_or_section": "Rule 3(zzl), Rule 39(19), Schedule III",
+            "page_number": "83-84, 105, 118"
+          },
+          {
+            "document_title": "Order on Ban on One-time Use and Throwaway Plastics (G.O. (Ms.) No. 84)",
+            "issuing_organisation": "Environment and Forests Department, Government of Tamil Nadu",
+            "official_url": "https://www.tn.gov.in/go_view/dept/11",
+            "publication_or_notification_date": "2018-06-25",
+            "rule_or_section": "Clause 2 (Ban on Single-Use Plastic Bags)",
+            "page_number": "2-3"
+          }
+        ],
+        "verification_status": "verified",
+        "mapping_notes": "Demonstration mapping: COCO 'banana' mapped to statutory Wet waste (organic fruit scrap)."
+      }
+    ],
+    "file_name": "sample2_bananas_fruit.jpg",
+    "file_size_bytes": 2085213,
+    "total_wall_time_ms": 223.56
+  },
+  {
+    "status": "success",
+    "message": "Detection completed. Found 5 object(s), 0 mapped to statutory waste streams.",
+    "target_hardware": "Raspberry Pi 5 + AI HAT+ 2 (Hailo-8 / Hailo-8L NPU)",
+    "target_model": "yolo11n.pt",
+    "pipeline_status": "inference_active",
+    "is_integrated": true,
+    "model_type": "coco_demonstration",
+    "image_dimensions": {
+      "width": 810,
+      "height": 1080,
+      "channels": 3
+    },
+    "inference_latency_ms": 72.29,
+    "total_detected": 5,
+    "total_waste_mapped": 0,
+    "stream_counts": {},
+    "detected_items": [
+      {
+        "class_id": "unmapped_bus",
+        "detected_label": "bus",
+        "item_name": "Bus",
+        "primary_stream": "Unsupported",
+        "bin_color": null,
+        "confidence": 0.9402,
+        "bounding_box": {
+          "x_min": 0.0047,
+          "y_min": 0.2124,
+          "x_max": 0.983,
+          "y_max": 0.6745
+        },
+        "is_waste_mapped": false,
+        "disposal_guidance": null,
+        "segregation_instructions": null,
+        "source_references": [],
+        "verification_status": null,
+        "mapping_notes": "Label 'bus' has no statutory waste taxonomy mapping in profile 'coco_demonstration'."
+      },
+      {
+        "class_id": "unmapped_person",
+        "detected_label": "person",
+        "item_name": "Person",
+        "primary_stream": "Unsupported",
+        "bin_color": null,
+        "confidence": 0.8882,
+        "bounding_box": {
+          "x_min": 0.8284,
+          "y_min": 0.3656,
+          "x_max": 0.9998,
+          "y_max": 0.8136
+        },
+        "is_waste_mapped": false,
+        "disposal_guidance": null,
+        "segregation_instructions": null,
+        "source_references": [],
+        "verification_status": null,
+        "mapping_notes": "Label 'person' has no statutory waste taxonomy mapping in profile 'coco_demonstration'."
+      },
+      {
+        "class_id": "unmapped_person",
+        "detected_label": "person",
+        "item_name": "Person",
+        "primary_stream": "Unsupported",
+        "bin_color": null,
+        "confidence": 0.8783,
+        "bounding_box": {
+          "x_min": 0.0585,
+          "y_min": 0.37,
+          "x_max": 0.2954,
+          "y_max": 0.8372
+        },
+        "is_waste_mapped": false,
+        "disposal_guidance": null,
+        "segregation_instructions": null,
+        "source_references": [],
+        "verification_status": null,
+        "mapping_notes": "Label 'person' has no statutory waste taxonomy mapping in profile 'coco_demonstration'."
+      },
+      {
+        "class_id": "unmapped_person",
+        "detected_label": "person",
+        "item_name": "Person",
+        "primary_stream": "Unsupported",
+        "bin_color": null,
+        "confidence": 0.8558,
+        "bounding_box": {
+          "x_min": 0.2754,
+          "y_min": 0.3784,
+          "x_max": 0.4253,
+          "y_max": 0.7967
+        },
+        "is_waste_mapped": false,
+        "disposal_guidance": null,
+        "segregation_instructions": null,
+        "source_references": [],
+        "verification_status": null,
+        "mapping_notes": "Label 'person' has no statutory waste taxonomy mapping in profile 'coco_demonstration'."
+      },
+      {
+        "class_id": "unmapped_person",
+        "detected_label": "person",
+        "item_name": "Person",
+        "primary_stream": "Unsupported",
+        "bin_color": null,
+        "confidence": 0.6219,
+        "bounding_box": {
+          "x_min": 0.0,
+          "y_min": 0.5149,
+          "x_max": 0.085,
+          "y_max": 0.8077
+        },
+        "is_waste_mapped": false,
+        "disposal_guidance": null,
+        "segregation_instructions": null,
+        "source_references": [],
+        "verification_status": null,
+        "mapping_notes": "Label 'person' has no statutory waste taxonomy mapping in profile 'coco_demonstration'."
+      }
+    ],
+    "file_name": "sample3_person_chair_bottle.jpg",
+    "file_size_bytes": 137419,
+    "total_wall_time_ms": 78.58
+  }
+]

@@ -1,0 +1,84 @@
+# ==============================================================================
+# EcoSort AI - Package .gitignore
+# ==============================================================================
+
+# Python & Virtual Environments
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+**/.venv/
+venv/
+**/venv/
+ENV/
+env/
+**/env/
+
+# Testing & Coverage
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend Build & Dependencies
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+build/
+.pnp
+.pnp.js
+*.tsbuildinfo
+.eslintcache
+
+# Model Weights & Binaries
+*.pt
+*.pth
+*.pte
+*.onnx
+*.bin
+*.safetensors
+*.engine
+*.hef
+*.tflite
+models/*.pt
+models/*.pte
+models/*.onnx
+models/*.hef
+**/models/*.pt
+**/models/*.pte
+**/models/*.onnx
+**/models/*.hef
+**/weights/
+
+# Training Logs & Runs
+runs/
+**/runs/
+wandb/
+*.cache
+**/*.cache
+
+# Secrets & Configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+credentials.json
+secrets.json
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+*.sqlite3
+*.db

@@ -1,0 +1,318 @@
+{
+  "task": "Task 5.4.5 — YOLO11n-P2 Metric Reconciliation and Sweep Reproduction",
+  "audit_timestamp": "2026-11-07T10:25:00",
+  "dataset_summary": {
+    "validation_images": 32,
+    "ground_truth_instances": 73,
+    "classes_count": 13,
+    "classes_present_in_val": 13,
+    "class_distribution": {
+      "clear_plastic_bottle": 5,
+      "glass_bottle": 9,
+      "plastic_bottle_cap": 2,
+      "metal_bottle_cap": 6,
+      "drink_can": 2,
+      "other_carton": 2,
+      "corrugated_carton": 6,
+      "disposable_plastic_cup": 1,
+      "other_plastic": 3,
+      "plastic_film": 15,
+      "other_plastic_wrapper": 5,
+      "styrofoam_piece": 2,
+      "cigarette": 15
+    }
+  },
+  "ultralytics_validation_audit": {
+    "reported_precision": 0.004794,
+    "reported_recall": 0.257265,
+    "reported_mAP50": 0.055665,
+    "reported_mAP50_95": 0.040174,
+    "optimal_operating_index": 2,
+    "optimal_confidence_approx": 0.1538,
+    "max_mean_f1": 0.0541,
+    "calculated_macro_precision": 0.004794,
+    "calculated_macro_recall": 0.257265,
+    "per_class_metrics": [
+      {
+        "class_id": 0,
+        "class_name": "clear_plastic_bottle",
+        "gt_instances": 5,
+        "precision_at_opt": 0.0021,
+        "recall_at_opt": 0.4000,
+        "mAP50": 0.0116,
+        "mAP50_95": 0.0036
+      },
+      {
+        "class_id": 1,
+        "class_name": "glass_bottle",
+        "gt_instances": 9,
+        "precision_at_opt": 0.0029,
+        "recall_at_opt": 0.1111,
+        "mAP50": 0.0005,
+        "mAP50_95": 0.0000
+      },
+      {
+        "class_id": 2,
+        "class_name": "plastic_bottle_cap",
+        "gt_instances": 2,
+        "precision_at_opt": 0.0286,
+        "recall_at_opt": 0.5000,
+        "mAP50": 0.4950,
+        "mAP50_95": 0.4455
+      },
+      {
+        "class_id": 3,
+        "class_name": "metal_bottle_cap",
+        "gt_instances": 6,
+        "precision_at_opt": 0.0000,
+        "recall_at_opt": 0.0000,
+        "mAP50": 0.0000,
+        "mAP50_95": 0.0000
+      },
+      {
+        "class_id": 4,
+        "class_name": "drink_can",
+        "gt_instances": 2,
+        "precision_at_opt": 0.0021,
+        "recall_at_opt": 0.5000,
+        "mAP50": 0.0183,
+        "mAP50_95": 0.0018
+      },
+      {
+        "class_id": 5,
+        "class_name": "other_carton",
+        "gt_instances": 2,
+        "precision_at_opt": 0.0000,
+        "recall_at_opt": 0.0000,
+        "mAP50": 0.0000,
+        "mAP50_95": 0.0000
+      },
+      {
+        "class_id": 6,
+        "class_name": "corrugated_carton",
+        "gt_instances": 6,
+        "precision_at_opt": 0.0050,
+        "recall_at_opt": 0.1667,
+        "mAP50": 0.0049,
+        "mAP50_95": 0.0005
+      },
+      {
+        "class_id": 7,
+        "class_name": "disposable_plastic_cup",
+        "gt_instances": 1,
+        "precision_at_opt": 0.0132,
+        "recall_at_opt": 1.0000,
+        "mAP50": 0.1658,
+        "mAP50_95": 0.0622
+      },
+      {
+        "class_id": 8,
+        "class_name": "other_plastic",
+        "gt_instances": 3,
+        "precision_at_opt": 0.0000,
+        "recall_at_opt": 0.0000,
+        "mAP50": 0.0000,
+        "mAP50_95": 0.0000
+      },
+      {
+        "class_id": 9,
+        "class_name": "plastic_film",
+        "gt_instances": 15,
+        "precision_at_opt": 0.0050,
+        "recall_at_opt": 0.4667,
+        "mAP50": 0.0259,
+        "mAP50_95": 0.0084
+      },
+      {
+        "class_id": 10,
+        "class_name": "other_plastic_wrapper",
+        "gt_instances": 5,
+        "precision_at_opt": 0.0034,
+        "recall_at_opt": 0.2000,
+        "mAP50": 0.0017,
+        "mAP50_95": 0.0002
+      },
+      {
+        "class_id": 11,
+        "class_name": "styrofoam_piece",
+        "gt_instances": 2,
+        "precision_at_opt": 0.0000,
+        "recall_at_opt": 0.0000,
+        "mAP50": 0.0000,
+        "mAP50_95": 0.0000
+      },
+      {
+        "class_id": 12,
+        "class_name": "cigarette",
+        "gt_instances": 15,
+        "precision_at_opt": 0.0000,
+        "recall_at_opt": 0.0000,
+        "mAP50": 0.0000,
+        "mAP50_95": 0.0000
+      }
+    ]
+  },
+  "confidence_threshold_sweep": [
+    {
+      "confidence_threshold": 0.001,
+      "total_predictions": 1724,
+      "predictions_per_image": 53.9,
+      "true_positives": 8,
+      "false_positives": 1716,
+      "false_negatives": 65,
+      "micro_precision": 0.004640,
+      "micro_recall": 0.109589,
+      "micro_f1": 0.008904,
+      "macro_precision": 0.001682,
+      "macro_recall": 0.048718
+    },
+    {
+      "confidence_threshold": 0.005,
+      "total_predictions": 243,
+      "predictions_per_image": 7.6,
+      "true_positives": 5,
+      "false_positives": 238,
+      "false_negatives": 68,
+      "micro_precision": 0.020576,
+      "micro_recall": 0.068493,
+      "micro_f1": 0.031646,
+      "macro_precision": 0.007823,
+      "macro_recall": 0.025641
+    },
+    {
+      "confidence_threshold": 0.010,
+      "total_predictions": 105,
+      "predictions_per_image": 3.3,
+      "true_positives": 5,
+      "false_positives": 100,
+      "false_negatives": 68,
+      "micro_precision": 0.047619,
+      "micro_recall": 0.068493,
+      "micro_f1": 0.056180,
+      "macro_precision": 0.016026,
+      "macro_recall": 0.025641
+    },
+    {
+      "confidence_threshold": 0.025,
+      "total_predictions": 23,
+      "predictions_per_image": 0.7,
+      "true_positives": 1,
+      "false_positives": 22,
+      "false_negatives": 72,
+      "micro_precision": 0.043478,
+      "micro_recall": 0.013699,
+      "micro_f1": 0.020833,
+      "macro_precision": 0.004525,
+      "macro_recall": 0.005128
+    },
+    {
+      "confidence_threshold": 0.050,
+      "total_predictions": 5,
+      "predictions_per_image": 0.2,
+      "true_positives": 0,
+      "false_positives": 5,
+      "false_negatives": 73,
+      "micro_precision": 0.000000,
+      "micro_recall": 0.000000,
+      "micro_f1": 0.000000,
+      "macro_precision": 0.000000,
+      "macro_recall": 0.000000
+    },
+    {
+      "confidence_threshold": 0.100,
+      "total_predictions": 1,
+      "predictions_per_image": 0.03,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 73,
+      "micro_precision": 0.000000,
+      "micro_recall": 0.000000,
+      "micro_f1": 0.000000,
+      "macro_precision": 0.000000,
+      "macro_recall": 0.000000
+    },
+    {
+      "confidence_threshold": 0.150,
+      "total_predictions": 1,
+      "predictions_per_image": 0.03,
+      "true_positives": 0,
+      "false_positives": 1,
+      "false_negatives": 73,
+      "micro_precision": 0.000000,
+      "micro_recall": 0.000000,
+      "micro_f1": 0.000000,
+      "macro_precision": 0.000000,
+      "macro_recall": 0.000000
+    },
+    {
+      "confidence_threshold": 0.200,
+      "total_predictions": 0,
+      "predictions_per_image": 0.0,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 73,
+      "micro_precision": 0.000000,
+      "micro_recall": 0.000000,
+      "micro_f1": 0.000000,
+      "macro_precision": 0.000000,
+      "macro_recall": 0.000000
+    },
+    {
+      "confidence_threshold": 0.250,
+      "total_predictions": 0,
+      "predictions_per_image": 0.0,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 73,
+      "micro_precision": 0.000000,
+      "micro_recall": 0.000000,
+      "micro_f1": 0.000000,
+      "macro_precision": 0.000000,
+      "macro_recall": 0.000000
+    }
+  ],
+  "raw_confidence_distribution": {
+    "count_at_001": 1724,
+    "max_confidence": 0.1568,
+    "mean_confidence": 0.0035,
+    "median_confidence": 0.0017,
+    "p95_confidence": 0.0114,
+    "p99_confidence": 0.0327,
+    "detections_above_016": 0
+  },
+  "parameter_audit": {
+    "total_parameters": 2684404,
+    "transferred_parameters": 1518345,
+    "transferred_percentage": 56.56,
+    "new_parameters": 1166059,
+    "new_percentage": 43.44,
+    "submodule_breakdown": {
+      "backbone": {
+        "total": 1373880,
+        "transferred": 1373880,
+        "transferred_pct": 100.0
+      },
+      "neck": {
+        "total": 837760,
+        "transferred": 144465,
+        "transferred_pct": 17.2
+      },
+      "detect_head": {
+        "total": 472764,
+        "transferred": 0,
+        "transferred_pct": 0.0
+      }
+    },
+    "local_p2_checkpoints_found": [
+      "D:\\EcoSort-Resources\\experiments\\yolo11n_p2_architecture_preflight\\yolo11n_p2_initial.pt"
+    ],
+    "official_coco_p2_exists_on_disk": false,
+    "explanation": "Ultralytics does not distribute an official COCO-pretrained P2 checkpoint. The architecture modification (stride 4) introduces 1,166,059 newly initialized parameters (43.4% of total), requiring training from scratch for the P2 neck and detection head."
+  },
+  "reconciliation_resolutions": {
+    "resolution_recall": "Ultralytics reports macro-average recall (mean of per-class recalls evaluated at the max-mean-F1 threshold index), which evaluates to 25.73%. In contrast, 8/73 = 10.96% is the global micro-average recall (total TP / total GT) across the whole dataset at conf=0.001.",
+    "resolution_precision": "Ultralytics reports macro-average precision (mean of per-class precisions evaluated at the max-mean-F1 index), which evaluates to 0.48% (0.00479). In contrast, 8/1724 = 0.46% (0.00464) is the micro-average precision (total TP / total post-NMS predictions) at conf=0.001.",
+    "resolution_candidate_counts": "1,724 is the count of post-NMS candidate bounding boxes across all 32 validation images at conf=0.001 (53.9 boxes/image). 2,623 was an un-suppressed candidate count prior to strict duplicate filtering across overlapping classes.",
+    "resolution_detections_above_016": "Confirmed: Exactly 0 predictions are emitted at confidence thresholds >= 0.16 across all 32 validation images. The maximum confidence score emitted by any anchor across all 34,000 spatial locations is 0.1568."
+  }
+}

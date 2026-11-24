@@ -1,0 +1,27 @@
+# EcoSort AI — Proposed YOLO Dataset Configuration for TACO
+# Target Architecture: YOLO11n on Raspberry Pi 5 + AI HAT+ 2 (Hailo-8 / Hailo-8L)
+# License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+path: D:/EcoSort-Resources/datasets/TACO/processed # Dataset root directory
+train: images/train # 80% training split (~1,200 images)
+val: images/val     # 10% validation split (~150 images)
+test: images/test   # 10% test evaluation split (~150 images)
+
+# Consolidated 15-class waste taxonomy optimized for edge detection
+# Combines sparse TACO subcategories into actionable segregation classes
+names:
+  0: clear_plastic_bottle      # TACO #5 -> Dry waste (PET)
+  1: other_plastic_bottle      # TACO #4 -> Dry waste (HDPE)
+  2: plastic_bottle_cap        # TACO #7 -> Dry waste (PP)
+  3: drink_can                 # TACO #12 -> Dry waste (Aluminium)
+  4: food_can                  # TACO #10 -> Dry waste (Tinplate/Steel)
+  5: drink_carton              # TACO #16 -> Dry waste (Tetra Pak)
+  6: corrugated_carton         # TACO #17 -> Dry waste (Cardboard)
+  7: normal_paper              # TACO #33 -> Dry waste (Cellulose)
+  8: glass_bottle              # TACO #6 -> Dry waste (Glass)
+  9: broken_glass              # TACO #9 -> Dry waste (Glass Shards)
+  10: crisp_packet             # TACO #42 -> Dry waste (MLP / RDF)
+  11: plastic_film             # TACO #36 -> Dry waste (LDPE)
+  12: plastic_bag              # TACO #40 -> Dry waste (Banned SUP)
+  13: cigarette                # TACO #59 -> Dry waste (Inert / Sweepings)
+  14: food_waste               # TACO #25 -> Wet waste (Compostable)

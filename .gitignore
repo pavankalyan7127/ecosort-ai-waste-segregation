@@ -1,0 +1,190 @@
+# ==============================================================================
+# EcoSort AI - Master .gitignore
+# Bharat AI-SoC Challenge 2026-27 (Problem Statement 2)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python & Virtual Environments
+# ------------------------------------------------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment directories
+.venv/
+**/.venv/
+venv/
+**/venv/
+ENV/
+env/
+**/env/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 2. Testing, Code Quality & Coverage
+# ------------------------------------------------------------------------------
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# 3. Node.js & Frontend Build Outputs (Vite + React)
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+**/dist-ssr/
+.pnp
+.pnp.js
+*.tsbuildinfo
+.eslintcache
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# 4. Large AI/ML Model Weights & Checkpoints (Exceeds GitHub 100MB limit)
+# ------------------------------------------------------------------------------
+*.pt
+*.pth
+*.pte
+*.onnx
+*.bin
+*.safetensors
+*.engine
+*.hef
+*.tflite
+*.mlmodel
+*.h5
+*.pkl
+*.joblib
+
+# Specific model folders
+models/*.pt
+models/*.pte
+models/*.onnx
+models/*.hef
+**/models/*.pt
+**/models/*.pte
+**/models/*.onnx
+**/models/*.hef
+**/models/*.bin
+**/weights/*.pt
+**/weights/*.pth
+
+# ------------------------------------------------------------------------------
+# 5. Training, Validation & Experiment Outputs
+# ------------------------------------------------------------------------------
+runs/
+**/runs/
+wandb/
+**/wandb/
+lightning_logs/
+.neptune/
+*.cache
+**/*.cache
+*.cache.npy
+
+# ------------------------------------------------------------------------------
+# 6. Raw Datasets & Archive Files
+# ------------------------------------------------------------------------------
+datasets/
+**/datasets/
+data/raw/
+data/processed/
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.rar
+*.gz
+
+# ------------------------------------------------------------------------------
+# 7. Secrets, Credentials & Local Environment Files
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+credentials.json
+secrets.json
+service_account.json
+
+# ------------------------------------------------------------------------------
+# 8. Databases & Runtime Logs
+# ------------------------------------------------------------------------------
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# ------------------------------------------------------------------------------
+# 9. Operating System Artifacts
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------------------------
+# 10. IDE, Editor & Workspace Configuration
+# ------------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+demo.java
